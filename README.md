@@ -1,7 +1,8 @@
 ---
 services: cognitive-services, luis, language-understanding
 platforms: dotnet
-author: cahann---
+author: cahann
+---
 
 # Cognitive Services: LUIS Programmatic SDK Console Application Sample
 
