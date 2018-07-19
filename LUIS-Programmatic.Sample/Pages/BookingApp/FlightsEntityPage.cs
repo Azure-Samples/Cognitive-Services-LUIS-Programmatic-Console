@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.BookingApp
 {
     using System;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
 
     class FlightsEntityPage : BasePage, IAppVersionPage
     {
@@ -18,7 +18,7 @@
 
             Console.WriteLine("We’ll now create the  \"Flight\" composite entity including \"Class\" and \"Destination\".");
 
-            var compositeEntity = new HierarchicalModelCreateObject
+            var compositeEntity = new CompositeEntityModel
             {
                 Name = "Flight",
                 Children = new[] { "Class", "Destination" }

@@ -1,7 +1,7 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample
 {
     using EasyConsole;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
     using Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages;
     using BookingApp = Pages.BookingApp;
     using GreetingApp = Pages.GreetingApp;
@@ -10,11 +10,13 @@
 
     public class BaseProgram : Program
     {
-        public ILuisProgrammaticAPI Client { get; private set; }
+        public LUISAuthoringClient Client { get; private set; }
+        public string ProgrammaticKey { get; private set; }
 
-        public BaseProgram(ILuisProgrammaticAPI client) : base("LUIS Programmatic API Demo", true)
+        public BaseProgram(LUISAuthoringClient client, string programmaticKey) : base("LUIS Programmatic API Demo", true)
         {
             Client = client;
+            ProgrammaticKey = programmaticKey;
             AddPage(new MainPage(this));
 
             AddPage(new Management.ListAppsPage(this));

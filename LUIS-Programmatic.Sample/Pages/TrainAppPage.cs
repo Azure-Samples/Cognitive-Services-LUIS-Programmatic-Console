@@ -1,6 +1,5 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages
 {
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
@@ -23,13 +22,13 @@
 
             AwaitTask(Task.Run(async() => {
                 var isTrained = false;
-                var result = await Client.Train.TrainVersionAsync(AppId, VersionId);
-                isTrained = result.Status.Equals("UpToDate");
+                var result = await Client.Train.TrainVersionWithHttpMessagesAsync(AppId, VersionId);
+                isTrained = result.Body.Status.Equals("UpToDate");
                 while (!isTrained)
                 {
                     await Task.Delay(1000);
-                    var status = await Client.Train.GetStatusAsync(AppId, VersionId);
-                    isTrained = status.All(m => trainedStatus.Contains(m.Details.Status));
+                    var status = await Client.Train.GetStatusWithHttpMessagesAsync(AppId, VersionId);
+                    isTrained = status.Body.All(m => trainedStatus.Contains(m.Details.Status));
                 }
             }));
 

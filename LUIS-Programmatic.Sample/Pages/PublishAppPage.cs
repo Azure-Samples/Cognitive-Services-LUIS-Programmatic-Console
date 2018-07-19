@@ -1,17 +1,21 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages
 {
     using EasyConsole;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
     using System;
 
     class PublishAppPage : BasePage, IAppVersionPage
     {
         public Guid AppId { get; set; }
         public string VersionId { get; set; }
+        private string ProgrammaticKey { get; set; }
+
 
         public PublishAppPage(BaseProgram program) : base("Publish", program)
-        { }
+        {
+            ProgrammaticKey = program.ProgrammaticKey;
+        }
 
         public override void Display()
         {
@@ -33,6 +37,7 @@
                 try
                 {
                     var result = AwaitTask(Client.Apps.PublishAsync(AppId, publishOptions));
+                    result.EndpointUrl += "?subscription-key=" + ProgrammaticKey + "&q=";
 
                     Console.WriteLine($"Your app is published. You can now go to test it on {result.EndpointUrl}");
                 }

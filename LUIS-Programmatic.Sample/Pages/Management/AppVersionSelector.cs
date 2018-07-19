@@ -14,7 +14,7 @@
         public override void Display()
         {
             Menu = new Menu();
-            var versions = AwaitTask(Client.Versions.ListAsync(AppId));
+            var versions = AwaitTask(Client.Versions.ListWithHttpMessagesAsync(AppId)).Body;
             foreach (var version in versions)
             {
                 SafeAddToMenu($"v{version.Version} [{version.TrainingStatus}]", () => NavigateToVersion(version.Version));

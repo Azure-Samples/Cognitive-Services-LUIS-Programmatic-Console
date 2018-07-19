@@ -11,7 +11,7 @@
         public override void Display()
         {
             Menu = new Menu();
-            var apps = AwaitTask(Client.Apps.ListAsync());
+            var apps = AwaitTask(Client.Apps.ListWithHttpMessagesAsync()).Body;
             foreach (var app in apps)
             {
                 SafeAddToMenu(new Option($"App: {app.Name}", () => NavigateWithInitializer<AppInfoPage>(p => p.AppId = app.Id.Value)));

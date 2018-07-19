@@ -2,14 +2,14 @@
 {
     using DotSpinners;
     using EasyConsole;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
     using Newtonsoft.Json;
     using System;
     using System.Threading.Tasks;
 
     class BaseMenuPage : MenuPage
     {
-        public ILuisProgrammaticAPI Client { get; private set; }
+        public LUISAuthoringClient Client { get; private set; }
 
         public BaseMenuPage(string title, BaseProgram program, params Option[] options) : base(title, program, options)
         {

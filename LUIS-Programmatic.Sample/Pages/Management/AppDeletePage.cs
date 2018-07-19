@@ -12,7 +12,7 @@
         public override void Display()
         {
             Menu = new Menu();
-            var apps = AwaitTask(Client.Apps.ListAsync());
+            var apps = AwaitTask(Client.Apps.ListWithHttpMessagesAsync()).Body;
             foreach (var app in apps)
             {
                 SafeAddToMenu(new Option(app.Name, () => DeleteApp(app.Id.Value)));
@@ -23,7 +23,7 @@
 
         private void DeleteApp(Guid appId)
         {
-            AwaitTask(Client.Apps.DeleteAsync(appId));
+            AwaitTask(Client.Apps.DeleteWithHttpMessagesAsync(appId));
             Console.WriteLine("App deleted!\n");
             WaitForGoBack();
         }

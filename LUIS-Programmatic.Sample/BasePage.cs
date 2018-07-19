@@ -2,14 +2,14 @@
 {
     using DotSpinners;
     using EasyConsole;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
     using Newtonsoft.Json;
     using System;
     using System.Threading.Tasks;
 
     class BasePage : Page
     {
-        public ILuisProgrammaticAPI Client { get; private set; }
+        public LUISAuthoringClient Client { get; private set; }
 
         public BasePage(string title, BaseProgram program) : base(title, program)
         {

@@ -2,15 +2,18 @@
 {
     using EasyConsole;
     using Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
     using System;
 
     class AppPublishPage : BasePage, IAppPage
     {
         public Guid AppId { get; set; }
+        private string ProgrammaticKey { get; set; }
 
         public AppPublishPage(BaseProgram program) : base("Publish", program)
-        { }
+        {
+            ProgrammaticKey = program.ProgrammaticKey;
+        }
 
         public override void Display()
         {
@@ -18,7 +21,7 @@
 
             Console.WriteLine("Preparing app to publish...");
 
-            var versions = AwaitTask(Client.Versions.ListAsync(AppId));
+            var versions = AwaitTask(Client.Versions.ListWithHttpMessagesAsync(AppId)).Body;
 
             Console.WriteLine("Select version to publish");
             var versionId = "";
@@ -42,8 +45,9 @@
 
             try
             {
-                var result = AwaitTask(Client.Apps.PublishAsync(AppId, versionToPublish));
+                var result = AwaitTask(Client.Apps.PublishWithHttpMessagesAsync(AppId, versionToPublish)).Body;
                 Console.WriteLine("Your app has been published.");
+                result.EndpointUrl += "?subscription-key=" + ProgrammaticKey + "&q=";
                 Print(result);
             }
             catch (Exception ex)

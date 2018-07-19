@@ -2,7 +2,7 @@
 {
     using EasyConsole;
     using Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
     using Newtonsoft.Json;
     using System;
     using System.IO;
@@ -20,7 +20,7 @@
 
             Console.WriteLine("Preparing app to export...");
 
-            var versions = AwaitTask(Client.Versions.ListAsync(AppId));
+            var versions = AwaitTask(Client.Versions.ListWithHttpMessagesAsync(AppId)).Body;
 
             Console.WriteLine("Select version to export");
             var versionId = "";
@@ -35,7 +35,7 @@
 
             try
             {
-                var result = AwaitTask(Client.Versions.ExportAsync(AppId, versionId));
+                var result = AwaitTask(Client.Versions.ExportWithHttpMessagesAsync(AppId, versionId)).Body;
                 var export = JsonConvert.SerializeObject(result, Formatting.Indented);
 
                 var defaultPath = Path.Combine(Directory.GetCurrentDirectory(), $"luis-{DateTime.UtcNow.Ticks}.json");

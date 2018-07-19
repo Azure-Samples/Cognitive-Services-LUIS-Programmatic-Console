@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages
 {
     using EasyConsole;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
     using System;
 
     class ShareAppPage : BasePage, IAppVersionPage

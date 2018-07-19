@@ -15,7 +15,7 @@
         {
             base.Display();
 
-            var info = AwaitTask(Client.Versions.GetAsync(AppId, VersionId), true);
+            var info = AwaitTask(Client.Versions.GetWithHttpMessagesAsync(AppId, VersionId), true).Body;
 
             Print(info);
 

@@ -15,7 +15,7 @@
         {
             base.Display();
 
-            var info = AwaitTask(Client.Model.ListEntitiesAsync(AppId, VersionId), true);
+            var info = AwaitTask(Client.Model.ListEntitiesWithHttpMessagesAsync(AppId, VersionId), true).Body;
 
             Print(info);
 

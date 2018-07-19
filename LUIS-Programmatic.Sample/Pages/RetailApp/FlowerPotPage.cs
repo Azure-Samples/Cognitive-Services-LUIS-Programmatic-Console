@@ -2,8 +2,8 @@
 {
     using System;
     using System.Linq;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
 
     class FlowerpotPage : BasePage, IAppVersionPage
     {
@@ -20,7 +20,7 @@
             Console.WriteLine("We’ll create a new \"Flowerpot\" hierarchical entity.");
             Console.WriteLine("The Flowerpot entity will contain \"Cactus\" as the only child entity.");
 
-            var flowerpotEntity = new HierarchicalModelCreateObject
+            var flowerpotEntity = new HierarchicalEntityModel
             {
                 Name = "Flowerpot",
                 Children = new[] { "Cactus"}.ToList()

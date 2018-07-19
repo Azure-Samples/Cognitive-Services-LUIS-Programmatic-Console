@@ -21,7 +21,7 @@
 
             Console.WriteLine("Preparing app to train...");
 
-            var versions = AwaitTask(Client.Versions.ListAsync(AppId));
+            var versions = AwaitTask(Client.Versions.ListWithHttpMessagesAsync(AppId)).Body;
 
             Console.WriteLine("Select version to train");
             var versionId = "";
@@ -34,13 +34,13 @@
 
             AwaitTask(Task.Run(async () => {
                 var isTrained = false;
-                var result = await Client.Train.TrainVersionAsync(AppId, versionId);
-                isTrained = result.Status.Equals("UpToDate");
+                var result = await Client.Train.TrainVersionWithHttpMessagesAsync(AppId, versionId).ConfigureAwait(false);
+                isTrained = result.Body.Status.Equals("UpToDate");
                 while (!isTrained)
                 {
                     await Task.Delay(1000);
-                    var status = await Client.Train.GetStatusAsync(AppId, versionId);
-                    isTrained = status.All(m => trainedStatus.Contains(m.Details.Status));
+                    var status = await Client.Train.GetStatusWithHttpMessagesAsync(AppId, versionId);
+                    isTrained = status.Body.All(m => trainedStatus.Contains(m.Details.Status));
                 }
             }));
 

@@ -15,7 +15,7 @@
         {
             base.Display();
 
-            var info = AwaitTask(Client.Model.ListPrebuiltsAsync(AppId, VersionId), true);
+            var info = AwaitTask(Client.Model.ListPrebuiltsWithHttpMessagesAsync(AppId, VersionId), true);
 
             Print(info);
 

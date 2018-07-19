@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.BookingApp
 {
     using System;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
 
     class StartPage : BasePage, IAppVersionPage
     {
@@ -29,7 +29,7 @@
 
             Console.WriteLine($"{simpleEntity.Name} simple entity created with id {simpleEntityId}");
 
-            var hierarchicalEntity = new HierarchicalModelCreateObject
+            var hierarchicalEntity = new HierarchicalEntityModel
             {
                 Name = "Class",
                 Children = new[] { "First", "Business", "Economy" }

@@ -2,7 +2,7 @@
 {
     using EasyConsole;
     using Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
     using System;
 
     class AppClonePage : BasePage, IAppPage
@@ -18,7 +18,7 @@
 
             Console.WriteLine("Preparing app to clone...");
 
-            var versions = AwaitTask(Client.Versions.ListAsync(AppId));
+            var versions = AwaitTask(Client.Versions.ListWithHttpMessagesAsync(AppId)).Body;
 
             Console.WriteLine("Select version to clone");
             var versionId = "";
@@ -40,7 +40,7 @@
 
             try
             {
-                var result = AwaitTask(Client.Versions.CloneAsync(AppId, versionId, versionToClone));
+                var result = AwaitTask(Client.Versions.CloneWithHttpMessagesAsync(AppId, versionId, versionToClone)).Body;
                 Console.WriteLine("Your app has been cloned.");
                 Print(result);
             }

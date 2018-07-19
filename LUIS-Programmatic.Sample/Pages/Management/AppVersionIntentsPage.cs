@@ -15,7 +15,7 @@
         {
             base.Display();
 
-            var info = AwaitTask(Client.Model.ListIntentsAsync(AppId, VersionId), true);
+            var info = AwaitTask(Client.Model.ListIntentsWithHttpMessagesAsync(AppId, VersionId), true).Body;
 
             Print(info);
 

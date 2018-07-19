@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.RetailApp
 {
     using System;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
 
     class StartPage : BasePage, IAppVersionPage
     {
@@ -19,7 +19,7 @@
             Console.WriteLine("We’ll create a new \"Bouquet\" hierarchical entity.");
             Console.WriteLine("The Bouquet entity will contain \"Roses\" and \"Carnations\" as child entities.");
 
-            var bouquetEntity = new HierarchicalModelCreateObject
+            var bouquetEntity = new HierarchicalEntityModel
             {
                 Name = "Bouquet",
                 Children = new[] { "Roses", "Carnations" }

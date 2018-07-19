@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Models;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Models;
 
     class SendFlowersIntentPage : BasePage, IAppVersionPage
     {
