@@ -1,8 +1,8 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample
 {
     using EasyConsole;
     using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
-    using Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages;
+    using Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages;
     using BookingApp = Pages.BookingApp;
     using GreetingApp = Pages.GreetingApp;
     using Management = Pages.Management;

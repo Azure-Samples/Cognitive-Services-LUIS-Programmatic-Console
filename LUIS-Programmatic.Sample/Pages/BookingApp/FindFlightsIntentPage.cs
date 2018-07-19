@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.BookingApp
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.BookingApp
 {
     using System;
     using System.Collections.Generic;

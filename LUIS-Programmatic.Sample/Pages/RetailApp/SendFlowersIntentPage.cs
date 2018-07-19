@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.RetailApp
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.RetailApp
 {
     using System;
     using System.Collections.Generic;

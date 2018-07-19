@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample
 {
     using DotSpinners;
     using EasyConsole;

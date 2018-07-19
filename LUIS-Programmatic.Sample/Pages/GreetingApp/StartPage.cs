@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.GreetingApp
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.GreetingApp
 {
     using System;
     using System.Collections.Generic;

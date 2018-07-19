@@ -1,7 +1,7 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.Management
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.Management
 {
     using EasyConsole;
-    using Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic;
+    using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
     using System;
 
     class AppDeletePage : BaseMenuPage

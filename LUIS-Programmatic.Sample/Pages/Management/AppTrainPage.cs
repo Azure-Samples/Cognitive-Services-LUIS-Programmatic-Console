@@ -1,7 +1,7 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.Management
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.Management
 {
     using EasyConsole;
-    using Language.LUIS.Programmatic;
+    using Language.LUIS.Authoring;
     using System;
     using System.Linq;
     using System.Threading.Tasks;

@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.BookingApp
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.BookingApp
 {
     using System;
     using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;

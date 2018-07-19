@@ -1,7 +1,7 @@
-﻿namespace Microsoft.Azure.CognitiveServices.Language.LUIS.Programmatic.Sample
+﻿namespace Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring.Sample
 {
     using Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring;
-    using Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample;
+    using Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample;
     using Microsoft.Extensions.Configuration;
     using System;
     using System.IO;
@@ -30,11 +30,11 @@
 
             Configuration = builder.Build();
 
-            ProgrammaticKey = Configuration["LUIS.ProgrammaticKey"];
+            ProgrammaticKey = Configuration["LUIS.AuthoringKey"];
 
             if (string.IsNullOrWhiteSpace(ProgrammaticKey))
             {
-                throw new ArgumentException("Missing \"LUIS.ProgrammaticKey\" in appsettings.json");
+                throw new ArgumentException("Missing \"LUIS.AuthoringKey\" in appsettings.json");
             }
         }
     }

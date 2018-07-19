@@ -1,6 +1,6 @@
-﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Programmatic.Sample.Pages.Management
+﻿namespace Microsoft.Azure.CognitiveServices.LUIS.Authoring.Sample.Pages.Management
 {
-    using Language.LUIS.Programmatic;
+    using Language.LUIS.Authoring;
     using System;
 
     class AppVersionIntentsPage : BasePage, IAppVersionPage
