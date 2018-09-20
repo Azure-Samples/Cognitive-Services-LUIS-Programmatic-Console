@@ -1,9 +1,3 @@
----
-services: cognitive-services, luis, language-understanding
-platforms: dotnet
-author: cahann
----
-
 # Cognitive Services: LUIS Programmatic SDK Console Application Sample
 
 A simple console that showcases how the SDK can be used to create and customize new LUIS apps.
